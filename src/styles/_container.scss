@@ -1,0 +1,42 @@
+// ==== <WRAPPER> ======//
+.wrapper {
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+}
+
+//===== <MAIN GRID > ======//
+.container {
+
+    // -- MOBILE (< 576px) --//
+    @media (min-width: $md3+px) and (max-width: $md2+px) {
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    // -- TABLET (>= 768px) --//
+    @media (min-width: $md2+px) and (max-width: $md1+px) {
+        width: 100%;
+        padding: 0 30px;
+    }
+
+    // -- DESKTOP (>= 1024px) --//
+    @media (min-width: $md1+px) {
+        width: 100%;
+        padding: 0 30px;
+        margin: 0 auto;
+        max-width: $mw + px;
+    }
+}
+
+//===== <MAIN GRID blank> ======//
+
+// -- MOBILE (< 768px) --//
+@media (min-width: $md3+px) and (max-width: $md2+px) {}
+
+// -- TABLET (>= 768px) --//
+@media (min-width: $md2+px) and (max-width: $md1+px) {}
+
+// -- DESKTOP (>= 1024px) --//
+@media (min-width: $md1+px) {}
+

@@ -1,0 +1,149 @@
+@import "styles/_variables.scss";
+
+$menu-time: 0.5s;
+
+// -- MOBILE (< 768px) --//
+@media (min-width: $md3+px) {
+    .main {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 999;
+
+        width: 360px;
+        display: none;
+
+        background-color: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+
+        opacity: 0;
+        transition: $menu-time ease-out;
+
+    }
+
+    .close {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        width: 40px;
+        height: 40px;
+        background-color: transparent;
+        font-size: 0;
+        border: none;
+
+        &::before {
+            position: absolute;
+            left: 13px;
+            content: '';
+
+            width: 14px;
+            height: 3px;
+            background-color: #7b7b7b;
+            border-radius: 0px;
+            box-shadow: none;
+
+            transform: rotate(45deg);
+            transition-duration: 0.5s;
+        }
+
+        &::after {
+            position: absolute;
+            left: 13px;
+            content: '';
+
+            width: 14px;
+            height: 3px;
+            background-color: #7b7b7b;
+            border-radius: 0px;
+            box-shadow: none;
+
+            transform: rotate(-45deg);
+            transition-duration: 0.5s;
+        }
+
+        &:hover::before {
+            transform: rotate(225deg);
+            transition-duration: 0.5s;
+        }
+
+        &:hover::after {
+            transform: rotate(135deg);
+            transition-duration: 0.5s;
+        }
+    }
+
+    .title {
+        padding: 18px 17px;
+
+        font-size: 24px;
+        line-height: 24px;
+        font-weight: 400;
+        color: #000000;
+    }
+
+    .description_wrapper {
+        padding: 16px 17px;
+
+        border-top: 1px solid #eceef1;
+        border-bottom: 1px solid #eceef1;
+    }
+
+    .description {
+        font-size: 16px;
+        line-height: 24px;
+        color: #4c4b4b;
+    }
+
+    .button_wrapper {
+        width: 80px;
+
+        margin: 16px 16px 16px auto;
+    }
+
+    //Overlay 
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+
+        display: none;
+
+        width: 100vw;
+        height: 100vh;
+
+        opacity: 0;
+        background-color: #000000;
+
+        transition: $menu-time ease-in-out;
+    }
+
+    .active {
+        .main {
+            display: block;
+
+            opacity: 1;
+            transition: $menu-time ease-out;
+        }
+
+        //Overlay 
+        .overlay {
+            z-index: 100;
+
+            display: block;
+
+            opacity: 0.5;
+            transition: $menu-time ease-in-out;
+        }
+    }
+}
+
+
+// -- TABLET (>= 768px) --//
+@media (min-width: $md2+px) {
+    .main {
+        width: 395px;
+    }
+}

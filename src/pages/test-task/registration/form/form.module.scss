@@ -1,0 +1,251 @@
+@import "styles/_variables.scss";
+
+//Text Input
+.input_wrapper {
+    margin-bottom: 24px;
+
+    font-family: PTSans;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 400;
+    color: #212529;
+}
+
+.input_label {
+    display: block;
+}
+
+.input_text {
+    display: block;
+    height: 38px;
+    width: 100%;
+    padding: 0 12px;
+    margin-top: 12px;
+
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+
+    &::placeholder {
+        color: #b2b9c0;
+    }
+
+    &:focus {
+        border: 1px solid rgba(128, 189, 255, 1);
+        box-shadow: 0 0 0 3px rgba(128, 189, 255, 0.2);
+    }
+}
+
+.input_text.error {
+    border: 1px solid rgba(219, 52, 69, 1);
+}
+
+.input_text:focus.error {
+    border: 1px solid rgba(219, 52, 69, 1);
+    box-shadow: 0 0 0 3px rgba(219, 52, 69, 0.2);
+}
+
+.input_text:disabled {
+    color: #767e86;
+    background-color: #e9ecef;
+    border-color: #ced4da;
+}
+
+.input_assistive {
+    margin-top: 6px;
+
+    font-family: OpenSans;
+    font-size: 12px;
+    font-weight: 400;
+    color: #212529;
+}
+
+.input_assistive.error {
+    color: #f44336;
+}
+
+//Radio Input
+.position_title {
+    margin-bottom: 22px;
+
+    font-family: PTSans;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 400;
+    color: #212529;
+}
+
+.radio_item {
+    position: relative;
+    margin-bottom: 14px;
+}
+
+.radio_input {
+    display: none;
+    margin-right: 20px;
+}
+
+.radio_label {
+    padding-left: 25px;
+
+    font-family: PTSans;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 400;
+    color: #212529;
+
+    cursor: pointer;
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0px;
+        top: 0px;
+
+        width: 16px;
+        height: 16px;
+        border: 1.0px solid #adb5bd;
+        border-radius: 50%;
+
+        opacity: 0.7;
+
+        transition-duration: $item-transition-hover*2;
+    }
+
+
+    &:active::before {
+        border-color: transparent;
+        background-color: #007bff;
+
+        transition-duration: $item-transition-hover;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 5px;
+        top: 5px;
+
+        width: 6px;
+        height: 6px;
+        background-color: transparent;
+        border-radius: 50%;
+
+        transition-duration: $item-transition-hover;
+    }
+
+    &:active::after {
+        content: "";
+        position: absolute;
+        left: 5px;
+        top: 5px;
+
+        width: 6px;
+        height: 6px;
+        background-color: #ffffff;
+        border-radius: 50%;
+
+        transition-duration: $item-transition-hover;
+    }
+}
+
+.radio_input:checked+.radio_label {
+    &::before {
+        border-color: transparent;
+        background-color: #007bff;
+
+        opacity: 1;
+
+        transition-duration: $item-transition-hover;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 5px;
+        top: 5px;
+
+        width: 6px;
+        height: 6px;
+        background-color: #ffffff;
+        border-radius: 50%;
+
+        transition-duration: $item-transition-hover;
+    }
+}
+
+//File Input
+.file {
+    margin-top: 10px;
+}
+
+.file_wrapper {
+    font-family: PTSans;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 400;
+    color: #212529;
+}
+
+.file_title {}
+
+.file_input {
+    display: none;
+}
+
+.file_field {
+    position: relative;
+
+    display: block;
+    width: 100%;
+
+    cursor: pointer;
+}
+
+.file_field_fake {
+    margin-right: 84px;
+
+    line-height: 36px;
+    color: #b2b9c0;
+}
+
+.file_field_button {
+    position: absolute;
+    top: 0px;
+    right: 0;
+
+    padding: 0 16px;
+    height: 36px;
+
+    line-height: 36px;
+    border-left: 1px solid #d4d9de;
+    border-radius: 0px 4px 4px 0px;
+    background-color: #f8f7f5;
+}
+
+.file_field_focus {
+    border-left: 1px solid #80bdff;
+    ;
+}
+
+.file_field_button.error {
+    border-left: 1px solid #dc3545;
+}
+
+//Button
+.button_wrapper {
+    margin: 0 auto;
+    margin-top: 40px;
+
+    width: 210px;
+}
+
+.form_error {
+    margin-top: 35px;
+}
+
+
+// -- TABLET (>= 768px) --//
+@media (min-width: $md2+px) and (max-width: $md1+px) {}
+
+// -- DESKTOP (>= 1024px) --//
+@media (min-width: $md1+px) {}

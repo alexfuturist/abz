@@ -1,0 +1,122 @@
+@import "styles/_variables.scss";
+
+.wrapper {
+    width: 216px;
+    margin: 0 auto;
+}
+
+.photo {
+    height: 70px;
+
+    text-align: center;
+
+    img {
+        border: 2px solid white;
+        border-radius: 50%;
+    }
+}
+
+.user_name {
+    margin-top: 16px;
+    padding-bottom: 2px;
+
+    font-size: 24px;
+    line-height: 1.2;
+    font-weight: 400;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #212529;
+}
+
+.position,
+.mail,
+.phone {
+    margin-top: 8px;
+
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #4c4b4b;
+}
+
+.email_wrapper {
+    position: relative;
+
+    margin-top: 4px;
+}
+
+a.email {
+    display: block;
+    text-align: center;
+    margin-top: 0px;
+    width: 216px;
+
+    color: #4c4b4b;
+
+    .email_text {
+        line-height: 20px;
+        vertical-align: top;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .email_text_phantom {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        color: red;
+
+        display: inline-block;
+
+        visibility: hidden;
+    }
+}
+
+.email_tooltip {
+    position: absolute;
+    top: 46px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%) scale(0.85);
+
+    padding: 8px 10px;
+
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 400;
+    user-select: none;
+    color: #fefefe;
+
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 2px 3px 8px 0px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+
+    visibility: hidden;
+    filter: opacity(0%);
+    transition-duration: $item-transition-hover/2, 0.5s, 2s;
+    transition-timing-function: ease-out;
+    transition-property: filter, visibility, transform;
+}
+
+a.phone {
+    display: block;
+    margin-top: 0px;
+
+    color: #4c4b4b;
+}
+
+// -- DESKTOP (>= 1024px) --//
+@media (min-width: $md1+px) {
+    a.email:hover+.email_tooltip {
+        transform: translateX(-50%) translateY(0%) scale(1);
+        visibility: visible;
+        filter: opacity(100%);
+        transition: $item-transition-hover/2 ease-out;
+        transition-delay: 0.15s;
+    }
+}

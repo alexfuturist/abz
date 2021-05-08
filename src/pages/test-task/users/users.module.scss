@@ -1,0 +1,153 @@
+@import "styles/_variables.scss";
+
+// -- MOBILE (< 768px) --//
+@media (min-width: $md3+px) and (max-width: $md2+px) {
+    .main {
+        padding-top: 78px;
+        padding-bottom: 80px;
+
+        background-color: $color-background-2;
+    }
+
+    .title {
+        font-size: 30px;
+        line-height: 30px;
+        font-weight: 400;
+        text-align: center;
+        color: #212529;
+    }
+
+    .description {
+        margin-top: 16px;
+        padding-bottom: 2px;
+
+        font-size: 16px;
+        font-weight: 400;
+        text-align: center;
+        color: #4c4b4b;
+    }
+
+    .users {
+        // margin-top: 35px;
+    }
+
+    .user {
+        margin-top: 37px;
+    }
+
+    .button {
+        display: flex;
+        justify-content: center;
+        margin-top: 35px;
+    }
+}
+
+// -- TABLET (>= 768px) --//
+@media (min-width: $md2+px) and (max-width: $md1+px) {
+    .main {
+        padding-top: 118px;
+        padding-bottom: 120px;
+
+        background-color: $color-background-2;
+    }
+
+    //But I think this is unnecessary
+    //I would consult with the designer and explain 
+    //that there is no need to change the width of the container 
+    .container {
+        padding: 0 15px !important;
+    }
+
+    .title {
+        font-size: 40px;
+        font-weight: 400;
+        text-align: center;
+        color: #212529;
+    }
+
+    .description {
+        margin-top: 24px;
+
+        font-size: 16px;
+        font-weight: 400;
+        text-align: center;
+        color: #4c4b4b;
+    }
+
+    .users {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        margin-top: 80px;
+    }
+
+    .user {
+        width: 33.3333%;
+        width: calc(100% / 3);
+
+        &:last-child {
+            margin-right: auto;
+        }
+
+        margin-bottom: 60px;
+    }
+
+    .button {
+        display: flex;
+        justify-content: center;
+
+        margin-top: -21px;
+    }
+}
+
+// -- DESKTOP (>= 1024px) --//
+@media (min-width: $md1+px) {
+    .main {
+        padding-top: 156px;
+        padding-bottom: 160px;
+
+        background-color: $color-background-2;
+    }
+
+    //But I think this is unnecessary
+    //I would consult with the designer and explain 
+    //that there is no need to change the width of the container 
+    .container {
+        padding: 0 15px !important;
+    }
+
+    .title {
+        font-size: 50px;
+        font-weight: 400;
+        text-align: center;
+        color: #212529;
+    }
+
+    .description {
+        margin-top: 24px;
+
+        font-size: 16px;
+        font-weight: 400;
+        text-align: center;
+        color: #4c4b4b;
+    }
+
+    .users {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        margin-top: 79px;
+    }
+
+    .user {
+        margin-bottom: 52px;
+    }
+
+    .button {
+        display: flex;
+        justify-content: center;
+
+        margin-top: -16px;
+    }
+}

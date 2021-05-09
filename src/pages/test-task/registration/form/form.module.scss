@@ -239,13 +239,7 @@
     width: 210px;
 }
 
+//Common Error
 .form_error {
     margin-top: 35px;
 }
-
-
-// -- TABLET (>= 768px) --//
-@media (min-width: $md2+px) and (max-width: $md1+px) {}
-
-// -- DESKTOP (>= 1024px) --//
-@media (min-width: $md1+px) {}

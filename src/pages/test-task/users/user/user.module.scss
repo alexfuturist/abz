@@ -70,10 +70,13 @@ a.email {
         top: 0;
         left: 0;
 
+        max-width: 220px;
+
         color: red;
 
         display: inline-block;
 
+        overflow: hidden;
         visibility: hidden;
     }
 }
@@ -108,6 +111,13 @@ a.phone {
     margin-top: 0px;
 
     color: #4c4b4b;
+}
+
+// -- MOBILE (< 768px) --//
+@media (min-width: $md3+px) and (max-width: $md1+px) { 
+    .email_tooltip {
+        display: none;
+    }
 }
 
 // -- DESKTOP (>= 1024px) --//

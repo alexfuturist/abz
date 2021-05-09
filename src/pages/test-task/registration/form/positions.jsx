@@ -14,10 +14,10 @@ const Positions = React.memo(() => {
     }, [])
 
     const positions = useSelector(state => state.registrationPage.positions);
-    // console.log(positions);
 
     return (
         <div>
+            {/* Почему-то не срабатывет checked при таком способе..*/}
             {positions.map(u =>
                 <div className={s.radio_item} key={u.id}>
                     <Field className={s.radio_input} type="radio" name="position" id={u.id} value={u.id} />

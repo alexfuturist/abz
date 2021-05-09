@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
-import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor';
+import ScrollableAnchor from 'react-scrollable-anchor';
 import RegistrationForm from './form/form';
-import cn from 'classnames';
 import s from './registration.module.scss'
 import { getToken } from 'store/registration-reducer';
 import { useDispatch } from 'react-redux';

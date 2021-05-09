@@ -101,8 +101,6 @@ export const getToken = () => async (dispatch) => {
 
 export const registerUser = (payload) => async (dispatch, getState) => {
 
-    // debugger
-
     const token = getState().registrationPage.token;
     //side-effect
     try {
@@ -113,7 +111,7 @@ export const registerUser = (payload) => async (dispatch, getState) => {
         dispatch(clearUsers());
         dispatch(getUsers(1, 6));
         console.log(response);
-        
+
     } catch (error) {
         if (error.response) {
             console.log(error.response.data);
@@ -126,7 +124,5 @@ export const registerUser = (payload) => async (dispatch, getState) => {
     }
 
 };
-
-
 
 export default registrationReducer;

@@ -86,10 +86,6 @@ const RegistrationForm = () => {
     let [width, setWidth] = useState(null);
     let [height, setHeight] = useState(null);
 
-    // useEffect(() => {
-
-    // }, [width, height])
-
     const SUPPORTED_FORMATS = [
         "image/jpg",
         "image/jpeg"
@@ -103,19 +99,11 @@ const RegistrationForm = () => {
         email: Yup.string()
             .min(2, "Invalid email address")
             .max(100, "Must be 100 characters or less")
-            // .email("Error")
             .required("Error")
             .matches(regexpEmail, 'Invalid email address'),
         phone: Yup.string()
             .required("Error")
             .matches(regexpPhone, 'Error'),
-        // phone: Yup.string()
-        // .when(disabled, {
-        //     is: false,
-        //     then: Yup.string()
-        //         .required('Field is required')
-        //         .matches(regexpPhone, 'Error')
-        // }),
         position: Yup
             .mixed()
             .required("Select your position"),
@@ -157,18 +145,6 @@ const RegistrationForm = () => {
                 }}
 
                 validationSchema={validationSchema}
-
-                // onSubmit={async (values, { setSubmitting }) => {
-                //     await new Promise(r => setTimeout(r, 500));
-                //     setSubmitting(false);
-                // }}
-
-                // onSubmit={(values, { setSubmitting }) => {
-                //     setTimeout(() => {
-                //         alert(JSON.stringify(values, null, 2));
-                //         setSubmitting(false);
-                //     }, 400);
-                // }}
 
                 onSubmit={(values, { resetForm }) => {
                     debugger
@@ -224,7 +200,6 @@ const RegistrationForm = () => {
                         </fieldset>
 
                         <div className={s.file}>
-
                             <FieldArray name={`photo`}>
                                 {(arrayHelper) => (
                                     <div className={s.file_wrapper}>
@@ -281,36 +256,7 @@ const RegistrationForm = () => {
                                 )}
 
                             </FieldArray>
-
                         </div>
-
-                        {/* <pre>
-                            {formProps.values.photo
-                                ? JSON.stringify(
-                                    {
-                                        fileName: formProps.values.photo.name,
-                                        type: formProps.values.photo.type,
-                                        size: `${formProps.values.photo.size} bytes`,
-                                        width: width
-                                    },
-                                    null,
-                                    2
-                                )
-                                : null}
-                        </pre>
-
-                        <pre>
-                            {formProps.values.position
-                                ? JSON.stringify(
-                                    {
-                                        position: formProps.values.position
-                                    },
-                                    null,
-                                    2
-                                )
-                                : null}
-                        </pre> */}
-
 
                         <div className={s.button_wrapper}>
                             <FormButton text="Sing up now" />
@@ -329,66 +275,3 @@ const RegistrationForm = () => {
 };
 
 export default RegistrationForm;
-
-// {/* <div className={formProps.touched.file && formProps.errors.file
-//                                         ? cn(s.file_field_button, s.error)
-//                                         : `${formProps.touched.file
-//                                             ? cn(s.file_field_button, s.file_field_focus)
-//                                             : s.file_field_button
-//                                         }`
-//                                     }
-//                                     >
-//                                         Browse
-//                                     </div> */}
-
-
-
-
-// const MyFileInput = ({ title, ...props }) => {
-//     // useField() returns [formik.getFieldProps(), formik.getFieldMeta()]
-//     // which we can spread on <input> and alse replace ErrorMessage entirely.
-//     const [field, meta] = useField(props);
-//     return (
-//         <div className={s.file_wrapper}>
-//             <p className={s.file_title}>Photo</p>
-//             {/* <label className={s.input_label} htmlFor={props.id || props.name}>{label}</label> */}
-
-//             <input className={s.file_input} name="file"
-//                 id={props.id || props.name} type="file"
-//                 defaultValue=""
-//                 {...field} {...props}
-//                 onChange={(event) => {
-//                     props.setFieldValue("file", event.currentTarget.files[0]);
-//                 }}
-//             >
-//             </input>
-
-//             <label className={meta.touched && meta.error
-//                 ? cn(s.input_text, s.error, s.file_field)
-//                 : cn(s.input_text, s.file_field)}
-//                 htmlFor={props.id || props.name}>
-
-//                 <div className={s.file_field_fake}>
-//                     {meta.touched && meta.error
-//                         ? "No file chosen"
-//                         : "Upload your photo"}
-//                 </div>
-
-//                 <div className={meta.touched && meta.error
-//                     ? cn(s.file_field_button, s.error)
-//                     : `${meta.touched
-//                         ? cn(s.file_field_button, s.file_field_focus)
-//                         : s.file_field_button
-//                     }`
-//                 }
-//                 >
-//                     {title}
-//                 </div>
-//             </label>
-
-//             {meta.touched && meta.error ? (
-//                 <div className={cn(s.input_assistive, s.error)}>{meta.error}</div>
-//             ) : (null)}
-//         </div>
-//     );
-// };

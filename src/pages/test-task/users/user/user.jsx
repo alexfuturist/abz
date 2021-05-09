@@ -27,17 +27,17 @@ const User = ({ props }) => {
             <div className={s.email_wrapper}>
                 <a
                     className={s.email}
-                    href={`mailto:${props.email || "commoncommoncommon@gmail.com"}`
+                    href={`mailto:${props.email}`
                     }>
                     <div className={s.email_text}>
-                        {`${props.email || "23132132113213213gmail.com"}`}
+                        {`${props.email}`}
                     </div>
                     <div className={s.email_text_phantom} ref={email}>
-                        {`${props.email || "23132132113213213gmail.com"}`}
+                        {`${props.email}`}
                     </div>
                 </a>
                 {editMode &&
-                    <div className={s.email_tooltip}>{`${props.email || "commoncommoncommon@gmail.com"}`}</div>
+                    <div className={s.email_tooltip}>{`${props.email}`}</div>
                 }
             </div>
             <a className={s.phone} href={`tel:${props.phone}`}>
